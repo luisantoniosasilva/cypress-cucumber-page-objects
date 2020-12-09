@@ -1,0 +1,4 @@
+{
+    "baseUrl": "https://demoqa.com/automation-practice-form/",
+    "testFiles": "**/*.feature"
+}
