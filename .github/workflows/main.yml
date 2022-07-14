@@ -22,4 +22,7 @@ jobs:
     - run: npm install
     
     # execucao dos testes
-    - run: npx cypress run
+    - name: Cypress run
+      uses: cypress-io/github-action@v4
+      with:
+        spec: cypress/integration/form.feature
