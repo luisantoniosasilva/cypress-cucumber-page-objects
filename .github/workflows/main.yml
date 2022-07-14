@@ -4,14 +4,22 @@ name: Run tests
 on: 
   push:
     branches: [main] #Branch que irá disparar o CI
-   
+
 jobs:
-  cypress-run:
-    runs-on: latest
+  build:
+
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1 # Verifica o repositório e baixa o código
-      - name: Installing dependencies and running cypress;
-        uses: cypress-io/github-action@v2 # Já executa o teste não tendo que passar pra subir o cypress
-        with:
-          start: npm install
+    - uses: actions/checkout@v2
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 14.x
+        
+    # instalacao das dependências
+    - run: npm install
+    
+    # execucao dos testes
+    - run: npx cypress run
