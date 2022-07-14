@@ -1,17 +1,17 @@
-name: Cypress tests
-on: [push]
+
+name: Run tests
+
+on: 
+  push:
+    branches: [main] #Branch que irá disparar o CI
+   
 jobs:
   cypress-run:
-    name: Cypress run
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-16.04 # Máquina que será executada o código
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: build
-        run: npm install
-        
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: actions/checkout@v1 # Verifica o repositório e baixa o código
+      - name: Installing dependencies and running cypress;
+        uses: cypress-io/github-action@v2 # Já executa o teste não tendo que passar pra subir o cypress
         with:
-          spec: cypress/integration/form.feature
+          start: npm install
