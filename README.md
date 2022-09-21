@@ -142,6 +142,8 @@ Neste arquivo criamos os steps e dentro de cada step executaremos uma ou mais fu
 ![enter image description here](https://miro.medium.com/max/700/1*kh16g3L2ovIigON7x8BVAg.png)
 ``` JS
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+// Caso esteja utilizando Cypress 10 a linha acima deverá importar ser:
+// import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import FormPage from '../../support/pageobjects/formPage'
 const formPage = new FormPage
 Given('I open the form page', () => {
