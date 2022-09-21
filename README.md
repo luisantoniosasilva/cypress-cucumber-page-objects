@@ -1,5 +1,8 @@
 # Teste Automatizado | Cypress + Cucumber + Page Objects
 ## Introdução
+> :information_source:  Se você está desejando utilizar o Cypress 10 em sua aplicação a configuração abaixo se encontra obsoleta, favor visitar o projeto [
+cypress-10-cucumber-preprocessor](https://github.com/luisantoniosasilva/cypress-10-cucumber-preprocessor).
+
 ### O que é Cypress
 Cypress é um **framework** utilizado para automação de testes end to end. Atualmente, utiliza JavaScript como linguagem de programação
 
